@@ -19,8 +19,7 @@ public class MessageUtils {
         return translatePrefix(message.replace("%PLAYER%", player.getDisplayName()));
     }
 
-    public static void sendHelpMessage(CommandSender sender, int i) {
-        sender.sendMessage("Zahl: "+i);
+    public static void sendHelpMessage(CommandSender sender) {
         sender.sendMessage(Messages_Manager.CMD_PERMISSIONS_HELP_SPACE1);
         sender.sendMessage(Messages_Manager.CMD_PERMISSIONS_HELP_CREATE);
         sender.sendMessage(Messages_Manager.CMD_PERMISSIONS_HELP_DELETE);
