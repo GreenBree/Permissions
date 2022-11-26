@@ -1,0 +1,10 @@
+name: Permissions
+version: '${project.version}'
+main: de.greenbre.permissions.Permissions
+author: GreenBre
+api-version: 1.19
+commands:
+  permissions:
+    permission: permission.use
+    aliases: pex
+  rang:
