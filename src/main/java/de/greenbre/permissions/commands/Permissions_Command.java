@@ -23,7 +23,7 @@ public class Permissions_Command implements CommandExecutor {
         if(command.getName().equalsIgnoreCase("permissions")) {
             if(sender.hasPermission("permissions.use")) {
                 if(args.length == 0) {
-                    MessageUtils.sendHelpMessage(sender, 1);
+                    MessageUtils.sendHelpMessage(sender);
                     return true;
                 } else if(args.length == 1) {
                     if(args[0].equalsIgnoreCase("reloadmessages")) {
@@ -31,7 +31,7 @@ public class Permissions_Command implements CommandExecutor {
                         sender.sendMessage(Messages_Manager.CMD_PERMISSIONS_RELOADMESSAGES.replace("%LANGUAGE%", Config_Manager.LANGUAGE));
                         return true;
                     } else if(args[0].equalsIgnoreCase("help")) {
-                        MessageUtils.sendHelpMessage(sender, 2);
+                        MessageUtils.sendHelpMessage(sender);
                     } else {
                         sender.sendMessage(Messages_Manager.CMD_PERMISSIONS_HELP_HELP);
                         return true;
@@ -43,7 +43,7 @@ public class Permissions_Command implements CommandExecutor {
                             RangUtils.deleteGroup(groupname);
                             sender.sendMessage(MessageUtils.translatePrefix(Messages_Manager.CMD_PERMISSIONS_GROUP_DELETE.replace("%GROUP%",groupname)));
                         } else {
-                            MessageUtils.sendHelpMessage(sender, 3);
+                            MessageUtils.sendHelpMessage(sender);
                             return true;
                         }
                     } else if(args[0].equalsIgnoreCase("user")) {
@@ -57,11 +57,11 @@ public class Permissions_Command implements CommandExecutor {
                             }
                             sender.sendMessage(Messages_Manager.CMD_PERMISSIONS_USER_REMOVEGROUP.replace("%TARGET%", playerName));
                         } else {
-                            MessageUtils.sendHelpMessage(sender, 4);
+                            MessageUtils.sendHelpMessage(sender);
                             return true;
                         }
                     } else {
-                        MessageUtils.sendHelpMessage(sender, 5);
+                        MessageUtils.sendHelpMessage(sender);
                         return true;
                     }
                 } else if(args.length >= 3) {
@@ -102,7 +102,7 @@ public class Permissions_Command implements CommandExecutor {
                                 RangUtils.setWeighting(groupname, weight);
                                 sender.sendMessage(MessageUtils.translatePrefix(Messages_Manager.CMD_PERMISSIONS_GROUP_SETWEIGHTING_MESSAGE.replace("%GROUP%",groupname).replace("%WEIGHT%",weight)));
                             } else {
-                                MessageUtils.sendHelpMessage(sender, 7);
+                                MessageUtils.sendHelpMessage(sender);
                                 return true;
                             }
                         } else if (args[0].equalsIgnoreCase("user")) {
@@ -125,11 +125,11 @@ public class Permissions_Command implements CommandExecutor {
                                     sender.sendMessage(Messages_Manager.CMD_PERMISSIONS_USER_SETGROUP_USERNOTEXISTS.replace("%TARGET%", playerName));
                                 }
                             } else {
-                                MessageUtils.sendHelpMessage(sender, 8);
+                                MessageUtils.sendHelpMessage(sender);
                                 return true;
                             }
                         } else {
-                            MessageUtils.sendHelpMessage(sender, 9);
+                            MessageUtils.sendHelpMessage(sender);
                             return true;
                         }
                     }
